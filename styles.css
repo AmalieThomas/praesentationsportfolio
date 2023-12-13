@@ -1,0 +1,418 @@
+/* generel styling*/
+
+:root {
+    font-size: 18px;
+    font-family: 'Syne', sans-serif;
+    color: var(--sort);
+    background-color:#FBFCED;
+    --primary-color: #FBFCED;
+    --sort: #16161C;
+    --lilla: #BCBDF6;
+    --orange: #F76937;
+    --green: #DFF49F;
+    --fs-xl: clamp(0.3rem, 5vw + 1rem, 4rem);
+    --fs-l: 1.85rem;
+    --fs-m: 1.75rem;
+    --fs-s: 1rem;
+    --fs-b: 1.25em
+}
+
+body{
+    margin: 0;
+}
+
+h1{
+    font-family: 'Syne';
+    font-size: var(--fs-xl);
+    font-weight: 700;
+}
+
+h2{
+    font-weight: 600;
+    font-size: var(--fs-l);
+}
+
+h3{
+    font-size: var(--fs-m);
+    font-weight: 500;
+}
+
+p{
+    line-height: 1.7;
+    font-size: var(--fs-s);
+}
+
+ul{
+    line-height: 2;
+    font-size: var(--fs-s);
+}
+
+ol{
+    line-height: 2;
+    font-size: var(--fs-s);
+    font-style: italic;
+}
+
+
+/*header og knap*/
+
+.header{
+    background-color: var(--sort);
+    position:fixed;
+    width: 100%;
+    z-index: 3;
+}
+
+.header ul a{
+    color: #FBFCED;
+}
+
+.header ul{
+    color: #FBFCED;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+.header li a{
+    display:block;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.header li:last-child{
+    background-color: var(--orange);
+}
+
+.header li a:hover{
+    background-color:var(--lilla);
+    text-decoration: underline;
+}
+
+.header .logo{
+    display: block;
+    font-weight: 800;
+    font-size: 1.20em;
+    text-decoration: none;
+    padding: 15px 20px;
+    float: left;
+    color: #FBFCED;
+}
+
+.header .menu{
+    clear:both;
+    max-height: 0;
+    transition:max-height .2s ease-out;
+}
+
+.header .menu-icon{
+    padding: 28px 10px;
+    position: relative;
+    cursor: pointer;
+    float: right;
+}
+
+.header .menu-icon .nav-icon{
+    background: var(--primary-color);
+    display: block;
+    height: 2px;
+    width: 18px;
+    position:relative;
+    transition: background .2s ease-out;
+}
+
+.header .menu-icon .nav-icon:before{
+    background: var(--primary-color);
+    content:"";
+    display: block;
+    height: 100%;
+    width:100%;
+    position: absolute;
+    transition:all .2s ease-out;
+    top: 5px;
+}
+
+.header .menu-icon .nav-icon:after{
+    background: var(--primary-color);
+    content:"";
+    display: block;
+    height: 100%;
+    width:100%;
+    position: absolute;
+    transition:all .2s ease-out;
+    top: -5px;
+}
+
+.header .menu-btn{
+    display: none;
+}
+
+.header .menu-btn:checked ~ .menu{
+    max-height: 240px;
+}
+
+/*inhold*/
+/*overordnet grid*/
+
+.main-grid-container{
+    display: grid;
+    grid-template-columns:1fr;
+    grid-template-rows: auto;
+    background-color: var(--primary-color);
+    border: var(--sort) solid 2px;
+    padding-top: 75px;
+}
+
+.main-grid-container>*{
+    border: var(--lilla) solid 2px;
+}
+
+/*første afsnit*/
+
+.intro>*{
+    border: var(--orange) solid 2px;
+    margin: 0;
+    padding: 15px;
+}
+
+.intro>h1{
+    box-shadow: 0px 5px var(--sort);
+}
+
+.intro>.container{
+    width: auto;
+}
+
+.intro>.container>img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.intro>article>ul{
+    font-style: italic;
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.flex-container>*{
+    border: var(--sort) solid 2px;
+    padding: 20px;
+    border-radius: 40px;
+    color: var(--sort);
+    text-decoration: none;
+    font-size: var(--fs-s);
+    font-weight: 600;
+    margin: 10px;
+    box-shadow: 0px 5px var(--sort) ;
+}
+
+.flex-container>a{
+    display: flex;
+    align-items: center;    
+}
+
+.flex-container>:last-child{
+    background-color: var(--orange);
+}
+
+.flex-container>a:hover{
+    background-color: var(--lilla);
+    text-decoration: underline;
+}
+
+.mellemrum{
+    background-color: var(--primary-color);
+    height: 50px;
+    width: auto;
+}
+
+/*andet afsnit*/
+
+.udfordringer{
+    background-color: var(--sort);
+    color: var(--primary-color);
+    margin: 0;
+    border: solid 2px var(--sort);
+    display: grid;
+}
+
+.udfordringer>*{
+    padding: 15px;
+    margin: 0;
+}
+
+.udfordringer>h2{
+    border-bottom: var(--primary-color) solid 2px;
+    box-shadow: 0px 5px var(--primary-color);
+}
+
+.udfordringer>ol{
+    list-style-position: inside;
+    margin-left: 20px;
+}
+
+/*tredje afsnit*/
+
+.projekter>h2{
+    border: var(--sort) solid 2px;
+    padding: 15px;
+    box-shadow: 0px 5px var(--sort) ;
+}
+
+.projekt-flex{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.projekt-flex>*{
+    border: var(--sort) solid 2px;
+    margin: 15px;
+}
+
+.billede-container{
+    width: auto;    
+}
+
+.billede-container>img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.projekt1, .projekt3{
+    background-color: var(--green);
+}
+
+.projekt4, .projekt6{
+    background-color: var(--sort);
+    color: var(--primary-color);
+}
+
+.projekt2, .projekt5{
+    background-color: var(--lilla);
+}
+
+.projekt-flex>div>p{
+    height: auto;
+    width: auto;
+    padding: 20px;
+    font-size: var(--fs-b);
+}
+
+
+
+
+
+/*footer*/
+
+.footer{
+    display: flex;
+    background-color: var(--sort);
+    color: var(--primary-color);
+    width: auto;
+    height: auto;
+    flex-direction: column-reverse;
+    align-items: center;
+    
+}
+.footer>*{
+    padding: 5px;
+}
+.ikoner{
+    margin-top: 20px;
+}
+.ikoner>*{
+    padding: 2px;
+}
+.nummer{
+    order: -1;
+    margin-bottom: 20px;
+}
+
+/*media*/
+
+
+@media only screen and (min-width:1000px){
+
+    .main-grid-container{
+        margin: 0px 100px;    
+    }
+
+    .item1{grid-area: header;}
+    .item2{grid-area: overskrift;}
+    .item3{grid-area: tekst;}
+    .container{grid-area: billede;}
+    .flex-container {grid-area: knapper;}
+
+    .intro{
+        display: grid;
+        grid-gap: 0px;
+        grid-template: 
+        'header header header header'
+        'overskrift billede billede billede'
+        'tekst billede billede billede'
+        'knapper billede billede billede';
+    }
+
+    .projekt-flex{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .billede-container>img{
+        max-width: 350px;
+    }
+
+    .projekt1, .projekt2, .projekt3, .projekt4, .projekt5, .projekt6{
+        max-width: 350px;
+    }
+
+    .footer{
+        flex-direction: row;
+    }
+
+    .footer>*{
+        margin: 10px;
+    }
+    
+    .ikoner{
+        margin-left: auto;
+    }
+
+}
+
+
+@media (min-width: 700px) {
+
+    .header li{
+    float:left;
+    }
+
+   .header li a{
+    padding: 20px 30px;
+   } 
+
+   .header .menu{
+    clear:none;
+    float:right;
+    max-height:none;
+   }
+
+   .header .menu-icon{
+    display: none;
+   }
+
+   .header .logo{
+    font-size: 1.25rem;
+    padding-top: 25px;
+   }
+   
+   
+}
